@@ -6,7 +6,11 @@ export default {
     title: "Projects"
   },
 
-  connector: 'Connector',
+  connector: {
+    title: 'Connector ↗',
+    href: 'https://connector.sinytra.org',
+    newWindow: true
+  },
   'forgified-fabric-api': 'Forgified Fabric API',
 
   "-- Support": {

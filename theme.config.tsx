@@ -1,10 +1,10 @@
 import React from 'react';
-import {DocsThemeConfig, useConfig} from 'nextra-theme-docs';
+import {DocsThemeConfig, Link, useConfig} from 'nextra-theme-docs';
 import {HeaderLogo} from "./components/HeaderLogo";
 import PageFooter from "./components/PageFooter";
 
 const config: DocsThemeConfig = {
-  logo: <HeaderLogo />,
+  logo: <HeaderLogo/>,
   project: {
     link: 'https://github.com/Sinytra/',
   },
@@ -12,6 +12,19 @@ const config: DocsThemeConfig = {
     link: 'https://discord.sinytra.org',
   },
   docsRepositoryBase: 'https://github.com/Sinytra/website/blob/master/',
+  banner: {
+    key: 'connector-web',
+    content: (
+      <div>
+        <div>
+          🎉 Connector now has its own <Link className="text-current!" href="https://connector.sinytra.org">
+            dedicated website
+          </Link>
+          .
+        </div>
+      </div>
+    )
+  },
   footer: {
     content: PageFooter
   },
@@ -21,16 +34,17 @@ const config: DocsThemeConfig = {
     forcedTheme: 'dark'
   },
   head: () => {
-    const { title } = useConfig();
+    const {title} = useConfig();
 
     return <>
       <title>{title}</title>
       <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
       <meta property="og:title" content={title ? title + ' – Sinytra' : 'Sinytra'}/>
-      <meta property="og:description" content="Bridging the gap between platforms. Powered by Free and Open Source Software."/>
+      <meta property="og:description"
+            content="Bridging the gap between platforms. Powered by Free and Open Source Software."/>
       <meta property="og:image" content="https://sinytra.org/logo.png"/>
-      <meta property="og:type" content="website" />
-      <meta name="theme-color" content="#ffcf06" />
+      <meta property="og:type" content="website"/>
+      <meta name="theme-color" content="#ffcf06"/>
     </>
   }
 }
